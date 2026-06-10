@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+CBT Terminologi FK UHO
+</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+CBT Terminologi Kedokteran &
+Anatomi
+</h1>
+
+<div id="timer">
+90:00
+</div>
+
+<div class="progress-container">
+
+<div id="progress-bar"></div>
+
+</div>
+
+<p id="question-counter"></p>
+
+<div id="question-card">
+
+<h2 id="question-text"></h2>
+
+<div id="options"></div>
+
+</div>
+
+<div class="navigation">
+
+<button onclick="prevQuestion()">
+← Sebelumnya
+</button>
+
+<button onclick="nextQuestion()">
+Berikutnya →
+</button>
+
+</div>
+
+<button id="finish-btn"
+onclick="submitQuiz()">
+
+Selesai Ujian
+
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<script src="js/questions.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
