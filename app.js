@@ -105,7 +105,7 @@ function showResult() {
 
   let levelText = "";
 
-  const percent = (score / questions.length) * 100;
+  const percent = (score / quizData.length) * 100;
 
   if (percent >= 80) levelText = "Kategori: Sangat Baik 🔥";
   else if (percent >= 60) levelText = "Kategori: Cukup 👍";
