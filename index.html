@@ -1,78 +1,106 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CBT FK UHO - Terminologi & Musculoskeletal</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-CBT Terminologi FK UHO
-</title>
-
-<link rel="stylesheet"
-href="css/style.css">
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
-<div class="container">
+  <!-- HEADER -->
+  <header class="header">
+    <h1>CBT FK UHO</h1>
+    <p class="subtitle">
+      Latihan Terminologi Kedokteran • Anatomi • Musculoskeletal
+    </p>
+  </header>
 
-<h1>
-CBT Terminologi Kedokteran &
-Anatomi
-</h1>
+  <!-- MAIN CONTAINER -->
+  <main class="container">
 
-<div id="timer">
-90:00
-</div>
+    <!-- PROGRESS SECTION -->
+    <section class="progress-section">
 
-<div class="progress-container">
+      <div class="progress-info">
+        <span id="questionCounter">Soal: 0 / 0</span>
+        <span id="scoreDisplay">Skor: 0</span>
+        <span id="difficultyDisplay">Level: -</span>
+      </div>
 
-<div id="progress-bar"></div>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
 
-</div>
+    </section>
 
-<p id="question-counter"></p>
+    <!-- QUIZ CARD -->
+    <section class="quiz-card">
 
-<div id="question-card">
+      <!-- QUESTION -->
+      <div class="question-box">
+        <h2 id="questionText">Loading soal...</h2>
+      </div>
 
-<h2 id="question-text"></h2>
+      <!-- OPTIONS -->
+      <div id="optionsContainer" class="options-container">
+        <!-- JS inject options here -->
+      </div>
 
-<div id="options"></div>
+      <!-- FEEDBACK / EXPLANATION -->
+      <div id="feedbackBox" class="feedback-box hidden">
 
-</div>
+        <p id="answerStatus"></p>
 
-<div class="navigation">
+        <div class="explanation-title">
+          Penjelasan:
+        </div>
 
-<button onclick="prevQuestion()">
-← Sebelumnya
-</button>
+        <p id="explanationText"></p>
+      </div>
 
-<button onclick="nextQuestion()">
-Berikutnya →
-</button>
+      <!-- CONTROLS -->
+      <div class="controls">
 
-</div>
+        <button id="nextBtn" onclick="nextQuestion()">
+          Next
+        </button>
 
-<button id="finish-btn"
-onclick="submitQuiz()">
+        <button id="restartBtn" onclick="restartQuiz()">
+          Restart
+        </button>
 
-Selesai Ujian
+      </div>
 
-</button>
+    </section>
 
-<div id="result"></div>
+  </main>
 
-</div>
+  <!-- RESULT SCREEN -->
+  <section id="resultScreen" class="result-screen hidden">
 
-<script src="js/questions.js"></script>
+    <h2>Hasil CBT</h2>
 
-<script src="js/app.js"></script>
+    <div class="result-box">
+      <p id="finalScore"></p>
+      <p id="finalLevel"></p>
+    </div>
+
+    <button onclick="restartQuiz()">Ulangi CBT</button>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>CBT FK UHO • Learning System Prototype</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 
 </body>
-
 </html>
