@@ -1,3 +1,4 @@
+let quizData = shuffleArray(questions);
 let currentQuestion = 0;
 let score = 0;
 let answered = false;
@@ -6,7 +7,7 @@ let answered = false;
 // LOAD QUESTION
 // =======================
 function loadQuestion() {
-  const q = questions[currentQuestion];
+  const q = quizData[currentQuestion];
 
   document.getElementById("questionText").innerText = q.question;
 
