@@ -14,7 +14,7 @@ function loadQuestion() {
   document.getElementById("difficultyDisplay").innerText = "Level: " + q.level;
 
   document.getElementById("questionCounter").innerText =
-    `Soal: ${currentQuestion + 1} / ${questions.length}`;
+    `Soal: ${currentQuestion + 1} / ${quizData.length}`;
 
   document.getElementById("scoreDisplay").innerText =
     `Skor: ${score}`;
@@ -48,7 +48,7 @@ function selectAnswer(selectedIndex, element) {
 
   answered = true;
 
-  const q = questions[currentQuestion];
+  const q = quizData[currentQuestion];
   const options = document.querySelectorAll(".option");
 
   const feedbackBox = document.getElementById("feedbackBox");
@@ -84,7 +84,7 @@ function selectAnswer(selectedIndex, element) {
 function nextQuestion() {
   currentQuestion++;
 
-  if (currentQuestion >= questions.length) {
+  if (currentQuestion >= quizData.length) {
     showResult();
   } else {
     loadQuestion();
@@ -101,7 +101,7 @@ function showResult() {
   resultScreen.classList.remove("hidden");
 
   document.getElementById("finalScore").innerText =
-    `Skor kamu: ${score} / ${questions.length}`;
+    `Skor kamu: ${score} / ${quizData.length}`;
 
   let levelText = "";
 
@@ -131,7 +131,7 @@ function restartQuiz() {
 // PROGRESS BAR
 // =======================
 function updateProgress() {
-  const progress = (currentQuestion / questions.length) * 100;
+  const progress = (currentQuestion / quizData.length) * 100;
   document.getElementById("progressFill").style.width = progress + "%";
 }
 
